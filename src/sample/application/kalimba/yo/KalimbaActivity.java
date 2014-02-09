@@ -43,9 +43,11 @@ public class KalimbaActivity extends Activity implements OnClickListener {
 		TypedArray buttons = getResources().obtainTypedArray(R.array.buttons);
 
 		for (int i = 0; i < buttons.length(); i++) {
-			mp[i].seekTo(0);
-			mp[i].start();
-			break;
+			if(buttons.getResourceId(i, -1)==v.getId()){
+				mp[i].seekTo(0);
+				mp[i].start();
+				break;				
+			}
 		}
 	}
 }
